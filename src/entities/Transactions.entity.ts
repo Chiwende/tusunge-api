@@ -10,7 +10,7 @@ export class Transactions {
     msisdn: number
 
     @Column()
-    amount: Double
+    amount: number
 
     @Column()
     type: string

@@ -9,13 +9,13 @@ export class Savings{
     msisdn: number
 
     @Column()
-    amount: Double
+    amount: number
 
     @Column()
     tenor: number
 
     @Column()
-    amount_due: Double
+    amount_due: number
 
     @Column()
     created_at: Date

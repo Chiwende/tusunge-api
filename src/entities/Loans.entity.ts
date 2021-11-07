@@ -6,13 +6,13 @@ export class Loans {
     id: number
     
     @Column()
-    amount: Double
+    amount: number
 
     @Column()
-    interest: Double
+    interest: number
 
     @Column()
-    amount_due: Double
+    amount_due: number
 
     @Column()
     created_at: Date
