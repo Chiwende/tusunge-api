@@ -12,6 +12,9 @@ import { Organisation_Contacts } from './entities/Organisation_contacts.entity';
 import { Savings } from './entities/Savings.entity';
 import { Transactions } from './entities/Transactions.entity';
 import { Users } from './entities/Users.entity';
+import { OrganisationsModule } from './organisations/organisations.module';
+import { Organisation } from './entities/Organisation.entity';
+import { EncryptService } from './encrypt/encrypt.service';
 
 @Module({
   imports: [
@@ -22,14 +25,22 @@ import { Users } from './entities/Users.entity';
       username: 'tisunge',
       password: 'P@m0dzi!',
       database: 'tisunge_sacco',
-      entities: [Customers, Loans, Organisation_Contacts, Savings, Transactions, Users],
+      entities: [
+        Customers, 
+        Loans, 
+        Organisation,
+        Organisation_Contacts, 
+        Savings, 
+        Transactions, 
+        Users
+      ],
       synchronize: false,
     }),
     UsersModule, 
     TransactionsModule, 
     PayModule, 
-    CustomersModule],
+    CustomersModule, OrganisationsModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, EncryptService],
 })
 export class AppModule {}
